@@ -35,8 +35,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Prisma commands:
 
-npx prisma init (init prisma)
-npx prisma db push (update schema)
-npx prisma migrate dev (run migration dev)
-npx prisma db seed (run seed command defined in packages.json)
-npx prisma studio (web app to look at db)
+- npx prisma init (init prisma)
+- npx prisma db push (update schema)
+- npx prisma migrate dev (run migration dev)
+- npx prisma db seed (run seed command defined in packages.json)
+- npx prisma studio (web app to look at db)
