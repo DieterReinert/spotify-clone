@@ -2,6 +2,7 @@ import GradientLayout from '../../components/gradientLayout'
 import SongTable from '../../components/songsTable'
 import { validateToken } from '../../lib/auth'
 import prisma from '../../lib/prisma'
+import Head from 'next/head'
 
 const getBGColor = (id) => {
   const colors = [
@@ -30,6 +31,12 @@ const Playlist = ({ playlist }) => {
       description={`${playlist.songs.length} songs`}
       image={`https://picsum.photos/400?random=${playlist.id}`}
     >
+      <div>
+        <Head>
+          <title>Trax | {playlist.name}</title>
+          <meta name="description" content="Trax Music Streaming Service" />
+        </Head>
+      </div>
       <SongTable songs={playlist.songs} />
     </GradientLayout>
   )

@@ -3,6 +3,7 @@ import { Image } from '@chakra-ui/react'
 import GradientLayout from '../components/gradientLayout'
 import { useMe } from '../lib/hooks'
 import prisma from '../lib/prisma'
+import Head from 'next/head'
 
 const Home = ({ artists }) => {
   const { user } = useMe()
@@ -14,8 +15,14 @@ const Home = ({ artists }) => {
       subtitle="profile"
       title={`${user?.firstName} ${user?.lastName}`}
       description={`${user?.playlistsCount} public playlists`}
-      image="https://dl.dropboxusercontent.com/s/bgiv0ssz3xpotz9/peep.png?dl=0"
+      image="https://dl.dropboxusercontent.com/s/bgiv0ssz3xpotz9/peep.png?dl=0"s
     >
+      <div>
+        <Head>
+          <title>Trax | Home</title>
+          <meta name="description" content="Trax Music Streaming Service" />
+        </Head>
+      </div>
       <Box color="white" paddingX="40px">
         <Box marginBottom="40px">
           <Text fontSize="2xl" fontWeight="bold">
@@ -30,6 +37,7 @@ const Home = ({ artists }) => {
                 <Image
                   src="https://placekitten.com/300/300"
                   borderRadius="100%"
+                  alt="artist"
                 />
                 <Box marginTop="20px">
                   <Text fontSize="large">{artist.name}</Text>
